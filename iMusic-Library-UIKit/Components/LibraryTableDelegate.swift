@@ -40,9 +40,10 @@ class LibraryTableDelegate: NSObject, UITableViewDataSource, UITableViewDelegate
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsTableCell", for: indexPath) as? DetailsTableCell else {
             return UITableViewCell()
         }
-        let currentAlbum = self.albums?.getAllAlbums()[position].getRowDetail(position: indexPath.row)
-        cell.setUpTitle(currentAlbum?.getTitle() ?? "")
-        cell.setUpDescription(currentAlbum?.getDetail() ?? "")
+        let currentAlbum = self.albums?.getAllAlbums()[position]
+        let currentRow = currentAlbum?.getRowDetail(position: indexPath.row)
+        cell.setUpTitle(currentRow?.getTitle() ?? "")
+        cell.setUpDescription(currentRow?.getDetail() ?? "")
         return cell
     }
     
