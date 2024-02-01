@@ -31,13 +31,13 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ysu-8e-UZP">
-                        <rect key="frame" x="16" y="66" width="304" height="1"/>
+                        <rect key="frame" x="16" y="66" width="288" height="1"/>
                         <color key="backgroundColor" systemColor="separatorColor"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="CEP-qY-yon"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" systemColor="separatorColor"/>
+                        <color key="textColor" systemColor="secondarySystemFillColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
@@ -45,7 +45,7 @@
                 <constraints>
                     <constraint firstItem="Ysu-8e-UZP" firstAttribute="top" secondItem="dku-hk-ekj" secondAttribute="bottom" constant="11" id="1D2-hr-VXP"/>
                     <constraint firstAttribute="bottom" secondItem="Ysu-8e-UZP" secondAttribute="bottom" constant="14" id="8Tt-G9-vye"/>
-                    <constraint firstAttribute="trailing" secondItem="Ysu-8e-UZP" secondAttribute="trailing" id="N2S-vo-BUX"/>
+                    <constraint firstAttribute="trailing" secondItem="Ysu-8e-UZP" secondAttribute="trailing" constant="16" id="N2S-vo-BUX"/>
                     <constraint firstItem="Y5V-xO-bT0" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="Ssp-wK-EZZ"/>
                     <constraint firstItem="Y5V-xO-bT0" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="aei-nF-Xkh"/>
                     <constraint firstItem="Ysu-8e-UZP" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="hll-r9-eSJ"/>
@@ -68,10 +68,13 @@
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="placeholderTextColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29803921568627451" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29803921570000003" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="secondarySystemFillColor">
+            <color red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="separatorColor">
-            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
