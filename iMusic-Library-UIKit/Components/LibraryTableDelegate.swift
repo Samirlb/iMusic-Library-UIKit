@@ -22,8 +22,7 @@ class LibraryTableDelegate: NSObject, UITableViewDataSource, UITableViewDelegate
         if indexPath.row == 0 {
             return self.setUpCover(tableView, indexPath: indexPath)
         }
-        let position = self.controller?.getCurrentAlbumPosition() ?? 0
-        return self.setUpCoverInfo(tableView, indexPath: indexPath, position: position)
+        return self.setUpCoverInfo(tableView, indexPath: indexPath)
     }
     
     private func setUpCover(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
@@ -31,19 +30,19 @@ class LibraryTableDelegate: NSObject, UITableViewDataSource, UITableViewDelegate
             return UITableViewCell()
         }
         cell.setUpCollectionView()
-        cell.setPhotos(names: self.albums?.getPhotos() ?? [])
+        cell.setAlbums(albums: self.albums ?? Albums())
         cell.setUpController(self.controller)
         return cell
     }
     
-    private func setUpCoverInfo(_ tableView: UITableView, indexPath: IndexPath, position: Int) -> UITableViewCell {
+    private func setUpCoverInfo(_ tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DetailsTableCell", for: indexPath) as? DetailsTableCell else {
             return UITableViewCell()
         }
-        let currentAlbum = self.albums?.getAllAlbums()[position]
-        let currentRow = currentAlbum?.getRowDetail(position: indexPath.row)
-        cell.setUpTitle(currentRow?.getTitle() ?? "")
-        cell.setUpDescription(currentRow?.getDetail() ?? "")
+        let currentAlbum = self.controller?.getCurrentAlbum() ?? Album()
+        let currentRow = currentAlbum.getRowDetail(position: indexPath.row)
+        cell.setUpTitle(currentRow.getTitle())
+        cell.setUpDescription(currentRow.getDetail())
         return cell
     }
     

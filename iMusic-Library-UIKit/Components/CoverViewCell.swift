@@ -5,7 +5,7 @@ class CoverViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
     
     @IBOutlet weak var coverCollectionView: UICollectionView!
     
-    private var photosNames: [String] = []
+    private var albums: Albums?
     private var controller: ViewController? = nil
     
     func setUpCollectionView() {
@@ -20,12 +20,12 @@ class CoverViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
         self.controller = controller
     }
     
-    func setPhotos(names: [String]) {
-        self.photosNames = names
+    func setAlbums(albums: Albums) {
+        self.albums = albums
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.photosNames.count
+        return self.albums?.getPhotos().count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -33,8 +33,8 @@ class CoverViewCell: UITableViewCell, UICollectionViewDelegate, UICollectionView
             return UICollectionViewCell()
         }
         cell.setUpImageTapAction(table: collectionView)
-        cell.setCoverImage(for: self.photosNames[indexPath.row])
-        cell.setUpLibrary(index: indexPath.row)
+        cell.setCoverImage(for: self.albums?.getPhotos()[indexPath.row] ?? "")
+        cell.setUpAlbum(album: self.albums?.getAllAlbums()[indexPath.row] ?? Album())
         cell.setUpController(self.controller)
         return cell
     }

@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  iMusic-Library-UIKit
-//
-//  Created by Samir on 29/01/24.
-//
-
 import UIKit
 
 @main

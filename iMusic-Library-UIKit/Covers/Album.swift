@@ -6,6 +6,7 @@ class Album {
     private(set) var artist: String = ""
     private(set) var genre: String = ""
     private(set) var year: String = ""
+    private(set) var song: AlbumSong = .none
     
     func updateName(_ name: String) {
         self.name = name
@@ -25,6 +26,10 @@ class Album {
     
     func updateYear(_ year: String) {
         self.year = year
+    }
+    
+    func updateSong(_ song: AlbumSong) {
+        self.song = song
     }
     
     func getRowDetail(position: Int) -> RowDetail {

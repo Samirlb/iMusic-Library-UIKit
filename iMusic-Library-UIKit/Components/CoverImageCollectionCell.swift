@@ -3,7 +3,7 @@ import UIKit
 class CoverImageCollectionCell: UICollectionViewCell {
     @IBOutlet weak var coverImage: UIImageView!
     
-    private var libraryIndex: Int = 0
+    private var currentAlbum: Album = Album()
     private var controller: ViewController? = nil
     
     override func awakeFromNib() {
@@ -19,8 +19,8 @@ class CoverImageCollectionCell: UICollectionViewCell {
         self.controller = controller
     }
     
-    func setUpLibrary(index: Int) {
-        self.libraryIndex = index
+    func setUpAlbum(album: Album) {
+        self.currentAlbum = album
     }
     
     func setUpImageTapAction(table: UICollectionView) {
@@ -29,6 +29,7 @@ class CoverImageCollectionCell: UICollectionViewCell {
     }
     
     @objc func imageTapped(sender: UITapGestureRecognizer) {
-        self.controller?.setCurrentAlbum(position: self.libraryIndex)
+        self.controller?.setCurrentAlbum(album: self.currentAlbum)
+        self.controller?.setCurrentSong()
     }
 }
